@@ -28,7 +28,8 @@ generatePattern();
 // Data
 var birthday = new Date('1997-06-11');
 var age = (new Date(Date.now() - birthday.getTime())).getUTCFullYear() - 1970;
-var typeString = ['a developer', 'a tech enthusiast', age + ' years old'];
+//var typeString = ['a developer', 'a tech enthusiast', age + ' years old'];
+var typeString = ['a developer', 'a tech enthusiast'];
 var links = {
     email: 'mailto:daniel@huisman.me',
     github: 'https://github.com/DanielHuisman',
