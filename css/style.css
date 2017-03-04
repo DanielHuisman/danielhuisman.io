@@ -17,11 +17,28 @@ main {
 
 footer {
     position: fixed;
-    bottom: 10%;
+    bottom: 5vh;
     width: 100%;
 }
 
-button.btn-icon {
+@media(min-width: 768px) {
+    footer {
+        bottom: 10vh;
+    }
+}
+
+h1.subheader {
+    font-size: 2.2rem;
+    margin-top: 32px;
+}
+
+img.profile {
+    border-radius: 50%;
+    width: 30vh;
+    transform: translateY(-64px);
+}
+
+button.btn-icon, a.btn-icon {
     border: 0;
     padding: 0;
 }
