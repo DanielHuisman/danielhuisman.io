@@ -1,30 +1,16 @@
 html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    min-height: 100%;
-    max-height: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 680px;
 }
 
 main {
-    height: 100%;
-    min-height: 100%;
-    max-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 footer {
-    position: fixed;
-    bottom: 5vh;
-    width: 100%;
-}
-
-@media(min-width: 768px) {
-    footer {
-        bottom: 10vh;
-    }
+    margin-top: 32px;
 }
 
 h1.subheader {
@@ -35,12 +21,38 @@ h1.subheader {
 img.profile {
     border-radius: 50%;
     width: 30vh;
-    transform: translateY(-64px);
+    margin-top: 32px;
+    margin-bottom: 32px;
 }
 
 button.btn-icon, a.btn-icon {
     border: 0;
     padding: 0;
+}
+
+@media (min-height: 768px), (min-width: 996px) {
+    html {
+        height: 100%;
+        min-height: 100%;
+        max-height: 100%;
+    }
+
+    main {
+        height: 100%;
+        min-height: 100%;
+        max-height: 100%;
+        align-items: center;
+    }
+
+    img.profile {
+        transform: translateY(-64px);
+    }
+
+    footer {
+        position: fixed;
+        bottom: 5vh;
+        width: 100%;
+    }
 }
 
 /* Background canvas */
