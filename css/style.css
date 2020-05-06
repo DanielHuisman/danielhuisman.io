@@ -1,12 +1,12 @@
 html {
-  margin: 0;
-  padding: 0;
-  min-height: 680px;
+    margin: 0;
+    padding: 0;
+    min-height: 680px;
 }
 
 main {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 footer {
@@ -31,7 +31,7 @@ button.btn-icon, a.btn-icon {
 }
 
 @media (min-height: 768px), (min-width: 996px) {
-    html {
+    html, body {
         height: 100%;
         min-height: 100%;
         max-height: 100%;
@@ -63,27 +63,4 @@ button.btn-icon, a.btn-icon {
     right: 0px;
     bottom: 0px;
     z-index: -100;
-}
-
-/* Typed.js blinking cursor */
-.typed-cursor {
-    opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
-}
-@keyframes blink {
-    0% {opacity: 1;}
-    50% {opacity: 0;}
-    100% {opacity: 1;}
-}
-@-webkit-keyframes blink {
-    0% {opacity: 1;}
-    50% {opacity: 0;}
-    100% {opacity: 1;}
-}
-@-moz-keyframes blink {
-    0% {opacity: 1;}
-    50% {opacity: 0;}
-    100% {opacity: 1;}
 }
