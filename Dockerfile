@@ -11,7 +11,7 @@ CMD ["nginx", "-g", "daemon off;"]
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copy app source
-COPY index.html /var/www/index.html
+COPY index.html /var/www/html/index.html
 COPY css /var/www/html/css/
 COPY images /var/www/html/images/
 COPY js /var/www/html/js/
