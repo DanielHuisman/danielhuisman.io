@@ -7,6 +7,9 @@ RUN sed -i "s/worker_processes\s*auto/worker_processes 1/g" /etc/nginx/nginx.con
 # Disable nginx daemonization
 CMD ["nginx", "-g", "daemon off;"]
 
+# Copy nginx config
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+
 # Copy app source
 COPY index.html /var/www/index.html
 COPY css /var/www/html/css/
