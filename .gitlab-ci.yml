@@ -7,7 +7,7 @@ variables:
     DOCKER_HOST: tcp://docker:2375
 
 before_script:
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker info
 
 stages:
@@ -18,8 +18,8 @@ stages:
 build:
     stage: build
     script:
-        - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME || true
-        - docker build --cache-from $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA .
+        - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG || true
+        - docker build --cache-from $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA .
         - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
     tags:
         - docker
@@ -28,8 +28,8 @@ publish:
     stage: publish
     script:
         - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA || true
-        - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
-        - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+        - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+        - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
     tags:
         - docker
 
